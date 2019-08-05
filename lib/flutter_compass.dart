@@ -31,4 +31,9 @@ class FlutterCompass {
 
     return _instance._compassEvents;
   }
+
+  /// Make safely closing the event [Stream] possible by user
+  void close() {
+    if (_compassEvents != null) _compassEvents.close();
+  }
 }
